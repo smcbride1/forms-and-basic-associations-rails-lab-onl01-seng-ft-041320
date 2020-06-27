@@ -159,4 +159,38 @@ genres = Hash[[
   "Synthpop"
 ].map { |genre| [genre, Genre.find_or_create_by(name: genre)] }]
 
+artists = ["Madonna", 
+  "Elton John",
+  "Elvis Presley",
+  "Stevie Wonder",
+  "Eminem",
+  "Aretha Franklin",
+  "Jay-Z",
+  "Michael Jackson",
+  "Marvin Gaye",
+  "Bruce Springsteen",
+  "James Brown",
+  "Billy Joel",
+  "Johnny Cash",
+  "Bob Dylan",
+  "Prince",
+  "Jimi Hendrix",
+  "Justin Timberlake",
+  "Britney Spears",
+  "Paul McCartney",
+  "Otis Redding",
+  "Mariah Carey",
+  "Neil Young",
+  "Chuck Berry",
+  "James Taylor",
+  "Tom Petty",
+  "Curtis Mayfield",
+  "Sam Cooke",
+  "Buddy Holly",
+  "George Harrison",
+  "Jerry Lee Lewis",
+  "Ray Charles"].map { |artist_name| Artist.find_or_create_by(name: artist_name) }
 
+Song.find_or_create_by(title: "Like a Prayer", genre: Genre.find(12), artist: Artist.find(1))
+
+Note.find_or_create_by(content: "Interesting artist", song: Song.find(1))
